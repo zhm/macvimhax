@@ -18,11 +18,10 @@ Keyboard shortcuts:
 
 Icon:
 -----
+<div style="float: right"><img src="https://github.com/zhm/macvimhax/raw/master/MacVim_icon.png"></div>
 This repository includes MacVim.icns. It's a replacement icon I use for MacVim. 
 
 To use the icon, replace MacVim.icns inside `~/Applications/MacVim.app/Contents/Resources`.
-
-![Replacement MacVim icon](https://github.com/zhm/macvimhax/raw/master/MacVim_icon.png)
 
 The icon is based on [this image](http://dribbble.com/shots/121306-MacVim-Replacement-Icon) created by [Drew Yeaton](https://github.com/drewyeaton).
 
