@@ -18,8 +18,9 @@ Keyboard shortcuts:
 
 Icon:
 -----
-<div style="float: right"><img src="https://github.com/zhm/macvimhax/raw/master/MacVim_icon.png"></div>
 This repository includes MacVim.icns. It's a replacement icon I use for MacVim. 
+
+![Replacement MacVim icon](https://github.com/zhm/macvimhax/raw/master/MacVim_icon.png)
 
 To use the icon, replace MacVim.icns inside `~/Applications/MacVim.app/Contents/Resources`.
 
