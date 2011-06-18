@@ -1,6 +1,7 @@
 "
 " Author: Zac McCormick
 " https://github.com/zhm/macvimhax
+" https://github.com/brentd/vimfiles
 "
 
 call pathogen#helptags()
@@ -37,11 +38,12 @@ set background=dark                " dark ftw
 set nowrap                         " disable word wrapping
 set lines=999                      " make it big
 set laststatus=2                   " always show the status window
-set linespace=2                    " slightly adjust line spacing so it's prettier
-set guifont=Panic\ Sans:h12        " Panic Sans, from Coda (http://www.panic.com/coda/)
+set linespace=0                    " set linespace to 0 so it looks pleasing
+set guifont=Inconsolata\ XL:h13    " http://www.bitcetera.com/en/techblog/2009/10/09/inconsolata-xl-font/
+set antialias                      " pretty text
 
 if has("gui_running")
-    set fuoptions=maxvert,maxhorz  " full screen is FULL SCREEN
+	set fuoptions=maxvert,maxhorz  " full screen is FULL SCREEN
 	set relativenumber             " relative line numberz
 	set transparency=4             " yes, I tried 3 and 5.
 endif
@@ -56,33 +58,63 @@ colorscheme ir_black
 hi directory term=bold gui=bold guifg=#fcfcfc guibg=#111111
 hi normal guifg=#e7e3cb guibg=#111111
 
-" \d will hide/show
-" \b will enter :NERDTreeFromBookmark and then
-" you can autocomplete the name of a bookmark
+" \d will hide/show the tree
+" \b expands to :NERDTreeFromBookmark and then you can autocomplete the name of a bookmark
 map <leader>d :execute 'NERDTreeToggle ' . getcwd()<CR>
 map <leader>b :NERDTreeFromBookmark
-let NERDTreeIgnore=['\.pyc$', 'CVS', '\~$']
+
+let NERDTreeIgnore=['\.pyc$', '\~$']  "ignore pyc files and anything ending with a ~
 let NERDTreeQuitOnOpen=0   " don't collapse NERDTree when a file is opened
 let NERDTreeDirArrows=1    " ASCII art doesn't work for me
 let NERDTreeMinimalUI=1    " YAGNI
 
-"window navigation shortcuts, ctrl h j k l
+" window navigation shortcuts, ctrl h j k l
 nmap <c-j> <c-w>j
 nmap <c-k> <c-w>k
 nmap <c-h> <c-w>h
 nmap <c-l> <c-w>l
 
-"window resizing shortcuts, ctrl u i o p
+" window resizing shortcuts, ctrl u i o p
 nmap <c-u> <c-w><
 nmap <c-p> <c-w>>
 nmap <c-i> <c-w>+
 nmap <c-o> <c-w>-
 
+" shift-enter to exit from insert mode
+inoremap <S-CR> <Esc>l
+
+" % hurts my fingers to type
+nnoremap <tab> %
+vnoremap <tab> %
+
+" quicker command mode
+nnoremap ; :
+
+
 "javascript files
 autocmd BufNewFile,BufRead *.json set filetype=javascript
 autocmd BufNewFile,BufRead *.geojson set filetype=javascript
 
+autocmd VimEnter * hi NERDTreeDir guifg=#eeeeee gui=bold
+autocmd VimEnter * hi NERDTreeDirSlash guifg=#eeeeee
+autocmd VimEnter * hi NERDTreeExecFile gui=none
 
+
+
+
+
+
+" Remember last location in file
+if has("autocmd")
+  au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$")
+    \| exe "normal g'\"" | endif
+endif
+
+
+
+" Command-T
+let g:CommandTMaxHeight=20
+let g:CommandTMatchWindowReverse=1
 
 
 "

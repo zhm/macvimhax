@@ -28,7 +28,7 @@ The icon is based on [this image](http://dribbble.com/shots/121306-MacVim-Replac
 
 Font:
 -----
-I use Panic Sans 12pt. You can find this font in the installation bundle of [Coda](http://www.panic.com/coda).
+I'm using 13pt Inconsolata XL. You can download the font [here](http://www.bitcetera.com/en/techblog/2009/10/09/inconsolata-xl-font/)
 
 Screenshot:
 -----------
