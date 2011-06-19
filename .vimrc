@@ -22,8 +22,9 @@ set showmatch                      " show matching braces
 set ruler                          " always show the line info
 set hlsearch                       " highlight search results
 set incsearch                      " search as the expression is being typed
-set number                         " show line numbers
+set relativenumber                 " show line numbers
 set noerrorbells                   " beeps = no
+set visualbell                     " visual bellz 
 set tabstop=4                      " 1 tab = 4 spaces
 set shiftwidth=4                   " indenting
 set autoindent                     " it does what it says
@@ -44,7 +45,7 @@ set antialias                      " pretty text
 
 if has("gui_running")
 	set fuoptions=maxvert,maxhorz  " full screen is FULL SCREEN
-	set relativenumber             " relative line numberz
+	"set relativenumber             " relative line numberz
 	set transparency=4             " yes, I tried 3 and 5.
 endif
 
@@ -69,22 +70,22 @@ let NERDTreeDirArrows=1    " ASCII art doesn't work for me
 let NERDTreeMinimalUI=1    " YAGNI
 
 " window navigation shortcuts, ctrl h j k l
-nmap <c-j> <c-w>j
-nmap <c-k> <c-w>k
-nmap <c-h> <c-w>h
-nmap <c-l> <c-w>l
+nnoremap <c-j> <c-w>j
+nnoremap <c-k> <c-w>k
+nnoremap <c-h> <c-w>h
+nnoremap <c-l> <c-w>l
 
 " window resizing shortcuts, ctrl u i o p
-nmap <c-u> <c-w><
-nmap <c-p> <c-w>>
-nmap <c-i> <c-w>+
-nmap <c-o> <c-w>-
+nnoremap <c-u> <c-w><
+nnoremap <c-p> <c-w>>
+nnoremap <c-i> <c-w>+
+nnoremap <c-o> <c-w>-
 
 " shift-enter to exit from insert mode
 inoremap <S-CR> <Esc>l
 
 " % hurts my fingers to type
-nnoremap <tab> %
+" nnoremap <tab> %
 vnoremap <tab> %
 
 " quicker command mode
@@ -94,16 +95,21 @@ nnoremap ; :
 "javascript files
 autocmd BufNewFile,BufRead *.json set filetype=javascript
 autocmd BufNewFile,BufRead *.geojson set filetype=javascript
+autocmd BufNewFile,BufRead *.ejs set filetype=html.javascript
 
 autocmd VimEnter * hi NERDTreeDir guifg=#eeeeee gui=bold
 autocmd VimEnter * hi NERDTreeDirSlash guifg=#eeeeee
 autocmd VimEnter * hi NERDTreeExecFile gui=none
 
 
+" vim-gist setup
+let g:gist_detect_filetype = 1       " auto detect file type from file name
+let g:gist_clip_command = 'pbcopy'   " copy link to clipboard after it's posted
 
 
-
-
+" tsql syntax setup
+let g:sql_type_default = "sqlserver"
+ 
 " Remember last location in file
 if has("autocmd")
   au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$")
@@ -113,7 +119,7 @@ endif
 
 
 " Command-T
-let g:CommandTMaxHeight=20
+let g:CommandTMaxHeight=50
 let g:CommandTMatchWindowReverse=1
 
 
