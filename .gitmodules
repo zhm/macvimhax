@@ -19,3 +19,6 @@
 [submodule ".vim/bundle/supertab"]
 	path = .vim/bundle/supertab
 	url = https://github.com/ervandew/supertab.git
+[submodule ".vim/bundle/vim-tsql"]
+	path = .vim/bundle/vim-tsql
+	url = https://github.com/hoffstein/vim-tsql.git
