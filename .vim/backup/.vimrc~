@@ -36,6 +36,7 @@ set guioptions+=LlRrb              " minimal
 set guioptions-=LlRrb              " YAGNI
 set guioptions-=T                  " hide toolbar
 set background=dark                " dark ftw
+set nowrap                         " disable word wrapping
 set lines=999                      " make it big
 set laststatus=2                   " always show the status window
 set linespace=0                    " set linespace to 0 so it looks pleasing
