@@ -15,8 +15,8 @@ filetype plugin on
 filetype plugin indent on
 
 set backup                         " enable backup just because I can, SSD FTW
-set directory=~/.vim/tmp           " don't litter my drive with .swp files
-set backupdir=~/.vim/backup        " put backup files in .vim directory
+set directory=~/.vimtmp/tmp        " don't litter my drive with .swp files
+set backupdir=~/.vimbackup/backup  " put backup files in .vim directory
 set showcmd                        " show current command in status bar
 set showmatch                      " show matching braces
 set ruler                          " always show the line info
