@@ -31,7 +31,7 @@ set autoindent                     " it does what it says
 set smartindent                    " it also does what it says, only smarter
 set noequalalways                  " all windows are not created equal
 set winminwidth=0                  " let me make windows resize down to 0
-set shell=/bin/bash                " s3tup my sh3ll, bro
+set shell=/bin/zsh                 " s3tup my sh3ll, bro
 set guioptions+=LlRrb              " minimal
 set guioptions-=LlRrb              " YAGNI
 set guioptions-=T                  " hide toolbar
