@@ -25,8 +25,8 @@ set incsearch                      " search as the expression is being typed
 set relativenumber                 " show line numbers
 set noerrorbells                   " beeps = no
 set visualbell                     " visual bellz 
-set tabstop=4                      " 1 tab = 4 spaces
-set shiftwidth=4                   " indenting
+set tabstop=2                      " 1 tab = 4 spaces
+set shiftwidth=2                   " indenting
 set autoindent                     " it does what it says
 set smartindent                    " it also does what it says, only smarter
 set noequalalways                  " all windows are not created equal
@@ -41,6 +41,7 @@ set laststatus=2                   " always show the status window
 set linespace=0                    " set linespace to 0 so it looks pleasing
 set guifont=Inconsolata\ XL:h13    " http://www.bitcetera.com/en/techblog/2009/10/09/inconsolata-xl-font/
 set antialias                      " pretty text
+set expandtab
 
 if has("gui_running")
 	set fuoptions=maxvert,maxhorz  " full screen is FULL SCREEN
