@@ -60,8 +60,7 @@ colorscheme ir_black
 hi directory term=bold gui=bold guifg=#fcfcfc guibg=#111111
 hi normal guifg=#e7e3cb guibg=#111111
 
-let mapleader = ","
-let g:mapleader = ","
+nmap , \
 
 nmap <leader>w :w!<cr>
 nmap <leader>. :tabnext<cr>
@@ -71,7 +70,6 @@ nmap <leader>/ :tabnext<cr>
 " \b expands to :NERDTreeFromBookmark and then you can autocomplete the name of a bookmark
 map <leader>d :execute 'NERDTreeToggle ' . getcwd()<CR>
 map <leader>b :NERDTreeFromBookmark
-
 
 let NERDTreeIgnore=['\.pyc$', '\~$']  "ignore pyc files and anything ending with a ~
 let NERDTreeQuitOnOpen=0   " don't collapse NERDTree when a file is opened
