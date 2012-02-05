@@ -109,6 +109,9 @@ autocmd BufNewFile,BufRead *.json set filetype=javascript
 autocmd BufNewFile,BufRead *.geojson set filetype=javascript
 autocmd BufNewFile,BufRead *.ejs set filetype=html.javascript
 
+autocmd BufNewFile,BufRead *.aliases set filetype=sh
+autocmd BufNewFile,BufRead *.functions set filetype=sh
+
 autocmd VimEnter * hi NERDTreeDir guifg=#eeeeee gui=bold
 autocmd VimEnter * hi NERDTreeDirSlash guifg=#eeeeee
 autocmd VimEnter * hi NERDTreeExecFile gui=none
@@ -125,6 +128,8 @@ if has("autocmd")
     \| exe "normal g'\"" | endif
 endif
 
+
+command Xmake :! find `pwd` -iname "*.xcodeproj" -exec xcodebuild -project "{}" $@ \;
 
 
 " Command-T
