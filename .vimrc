@@ -121,6 +121,9 @@ autocmd VimEnter * hi NERDTreeExecFile gui=none
 let g:gist_detect_filetype = 1       " auto detect file type from file name
 let g:gist_clip_command = 'pbcopy'   " copy link to clipboard after it's posted
 
+" syntastic/c++
+let g:syntastic_cpp_auto_refresh_includes = 1
+let g:syntastic_cpp_check_header = 1
 
 " Remember last location in file
 if has("autocmd")
@@ -130,7 +133,8 @@ endif
 
 
 command Xmake :! find `pwd` -iname "*.xcodeproj" -exec xcodebuild -project "{}" $@ \;
-
+"command CppInclude b:syntastic_cpp_cflags = ' -I/usr/include/libsoup-2.4'
+command! -nargs=1 CppInclude let b:syntastic_cpp_cflags = <q-args>
 
 " Command-T
 let g:CommandTMaxHeight=20
