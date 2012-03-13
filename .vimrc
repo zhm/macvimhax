@@ -116,6 +116,7 @@ autocmd VimEnter * hi NERDTreeDir guifg=#eeeeee gui=bold
 autocmd VimEnter * hi NERDTreeDirSlash guifg=#eeeeee
 autocmd VimEnter * hi NERDTreeExecFile gui=none
 
+command! -nargs=1 -range SuperRetab <line1>,<line2>s/\v%(^ *)@<= {<args>}/\t/g
 
 " vim-gist setup
 let g:gist_detect_filetype = 1       " auto detect file type from file name
