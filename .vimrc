@@ -125,6 +125,8 @@ let g:gist_clip_command = 'pbcopy'   " copy link to clipboard after it's posted
 " syntastic/c++
 let g:syntastic_cpp_auto_refresh_includes = 1
 let g:syntastic_cpp_check_header = 1
+"let g:syntastic_mode_map = { 'passive_filetypes': ['cpp', 'hpp'] }
+let g:syntastic_cpp_compiler_options = ' -I/usr/local/include/node -I/Users/zacmcc/local/include -I/usr/local/include'
 
 " Remember last location in file
 if has("autocmd")
