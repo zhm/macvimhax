@@ -61,3 +61,6 @@
 [submodule ".vim/bundle/ant.vim"]
 	path = .vim/bundle/ant.vim
 	url = https://github.com/lyricallogical/ant.vim.git
+[submodule ".vim/bundle/a.vim"]
+	path = .vim/bundle/a.vim
+	url = https://github.com/zhm/a.vim.git

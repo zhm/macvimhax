@@ -103,6 +103,20 @@ vnoremap <tab> %
 " quicker command mode
 nnoremap ; :
 
+" switch between cpp/hpp
+function! SwitchSourceHeader()
+  if (expand ("%:e") == "cpp")
+    find %:t:r.hpp
+  else
+    find %:t:r.cpp
+  endif
+endfunction
+
+nmap <leader>s :call SwitchSourceHeader()<CR>
+
+" a.vim mapping
+nmap <Leader>e :AV<CR>
+nmap <Leader>r :A<CR>
 
 "javascript files
 autocmd BufNewFile,BufRead *.json set filetype=javascript
