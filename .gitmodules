@@ -64,3 +64,12 @@
 [submodule ".vim/bundle/a.vim"]
 	path = .vim/bundle/a.vim
 	url = https://github.com/zhm/a.vim.git
+[submodule ".vim/bundle/conque-shell"]
+	path = .vim/bundle/conque-shell
+	url = https://github.com/vim-scripts/Conque-Shell.git
+[submodule ".vim/bundle/vim-easytags"]
+	path = .vim/bundle/vim-easytags
+	url = https://github.com/xolox/vim-easytags.git
+[submodule ".vim/bundle/omnicppcomplete"]
+	path = .vim/bundle/omnicppcomplete
+	url = https://github.com/vim-scripts/OmniCppComplete.git
