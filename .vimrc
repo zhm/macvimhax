@@ -24,7 +24,7 @@ set hlsearch                       " highlight search results
 set incsearch                      " search as the expression is being typed
 set relativenumber                 " show line numbers
 set noerrorbells                   " beeps = no
-set visualbell                     " visual bellz 
+set visualbell                     " visual bellz
 set tabstop=2                      " 1 tab = 2 spaces
 set shiftwidth=2                   " indenting
 set autoindent                     " it does what it says
@@ -88,6 +88,11 @@ nnoremap <c-p> <c-w>>
 nnoremap <c-i> <c-w>+
 nnoremap <c-o> <c-w>-
 
+nnoremap <leader>[ ^
+nnoremap <leader>] $
+nnoremap <leader>cw yiw
+nnoremap <leader>rw "_ciw<c-r>"<esc>
+
 " git helpers
 nnoremap <leader>gc :Gcommit<cr>
 nnoremap <leader>gs :Gstatus<cr>
@@ -102,6 +107,20 @@ vnoremap <tab> %
 
 " quicker command mode
 nnoremap ; :
+
+map <leader>tg :!/usr/local/bin/ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<CR>
+
+highlight ExtraWhitespace ctermbg=red guibg=red
+match ExtraWhitespace /\s\+$/
+autocmd BufWinEnter * match ExtraWhitespace /\s\+$/
+autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
+autocmd InsertLeave * match ExtraWhitespace /\s\+$/
+
+au BufNewFile,BufRead,BufEnter *.cpp,*.hpp set tags+=~/.tags/node
+au BufNewFile,BufRead,BufEnter *.cpp,*.hpp set tags+=~/.tags/stdlibcpp
+au BufNewFile,BufRead,BufEnter *.cpp,*.hpp set omnifunc=omni#cpp#complete#Main
+
+set completeopt=menu
 
 " switch between cpp/hpp
 function! SwitchSourceHeader()
@@ -132,6 +151,10 @@ autocmd VimEnter * hi NERDTreeExecFile gui=none
 
 command! -nargs=1 -range SuperRetab <line1>,<line2>s/\v%(^ *)@<= {<args>}/\t/g
 
+"easytags config
+let g:easytags_cmd = '/usr/local/bin/ctags'
+let g:easytags_include_members = 1
+
 " vim-gist setup
 let g:gist_detect_filetype = 1       " auto detect file type from file name
 let g:gist_clip_command = 'pbcopy'   " copy link to clipboard after it's posted
@@ -156,6 +179,41 @@ command! -nargs=1 CppInclude let b:syntastic_cpp_cflags = <q-args>
 " Command-T
 let g:CommandTMaxHeight=20
 let g:CommandTMatchWindowReverse=1
+
+
+function! StripWhitespace()
+  let l = line(".")
+  let c = col(".")
+  %s/\s\+$//e
+  call cursor(l, c)
+endfun
+
+command! Strip call StripWhitespace()<cr>
+
+
+
+""" FocusMode, adopted from http://paulrouget.com/e/vimdarkroom/
+function! ToggleFocusMode()
+  if (&foldcolumn != 12)
+    set laststatus=0
+    set numberwidth=10
+    set foldcolumn=12
+    set noruler
+    hi FoldColumn ctermbg=000000
+    hi LineNr ctermfg=0 ctermbg=0
+    hi NonText ctermfg=0
+  else
+    set laststatus=2
+    set numberwidth=4
+    set foldcolumn=0
+    set ruler
+    "execute 'colorscheme ' . g:colors_name
+  endif
+endfunc
+
+nnoremap <leader>fm :call ToggleFocusMode()<cr>
+command! Focus call ToggleFocusMode()<cr>
+
 
 
 "
@@ -192,7 +250,7 @@ function s:CdIfDirectory(directory)
 
   " Allows reading from stdin
   " ex: git diff | mvim -R -
-  if strlen(a:directory) == 0 
+  if strlen(a:directory) == 0
     return
   endif
 
