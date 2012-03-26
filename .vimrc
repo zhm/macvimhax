@@ -92,6 +92,10 @@ nnoremap <leader>[ ^
 nnoremap <leader>] $
 nnoremap <leader>cw yiw
 nnoremap <leader>rw "_ciw<c-r>"<esc>
+nnoremap <leader>e $
+nnoremap <leader>f ^
+nnoremap <s-h> b
+nnoremap <s-l> w
 
 " git helpers
 nnoremap <leader>gc :Gcommit<cr>
@@ -116,9 +120,9 @@ autocmd BufWinEnter * match ExtraWhitespace /\s\+$/
 autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
 autocmd InsertLeave * match ExtraWhitespace /\s\+$/
 
-au BufNewFile,BufRead,BufEnter *.cpp,*.hpp set tags+=~/.tags/node
-au BufNewFile,BufRead,BufEnter *.cpp,*.hpp set tags+=~/.tags/stdlibcpp
-au BufNewFile,BufRead,BufEnter *.cpp,*.hpp set omnifunc=omni#cpp#complete#Main
+"au BufNewFile,BufRead,BufEnter *.cpp,*.hpp set tags+=~/.tags/node
+"au BufNewFile,BufRead,BufEnter *.cpp,*.hpp set tags+=~/.tags/stdlibcpp
+"au BufNewFile,BufRead,BufEnter *.cpp,*.hpp set omnifunc=omni#cpp#complete#Main
 
 set completeopt=menu
 
@@ -131,11 +135,11 @@ function! SwitchSourceHeader()
   endif
 endfunction
 
-nmap <leader>s :call SwitchSourceHeader()<CR>
+" nmap <leader>s :call SwitchSourceHeader()<CR>
 
 " a.vim mapping
-nmap <Leader>e :AV<CR>
-nmap <Leader>r :A<CR>
+nmap <leader>s :AV<CR>
+nmap <leader>r :A<CR>
 
 "javascript files
 autocmd BufNewFile,BufRead *.json set filetype=javascript
