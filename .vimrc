@@ -112,7 +112,10 @@ vnoremap <tab> %
 " quicker command mode
 nnoremap ; :
 
-map <leader>tg :!/usr/local/bin/ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<CR>
+map <leader>ct :!/usr/local/bin/ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<CR>
+
+"TagHighlight
+map <leader>ht :UpdateTypesFileOnly<CR>
 
 highlight ExtraWhitespace ctermbg=red guibg=red
 match ExtraWhitespace /\s\+$/
@@ -120,8 +123,8 @@ autocmd BufWinEnter * match ExtraWhitespace /\s\+$/
 autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
 autocmd InsertLeave * match ExtraWhitespace /\s\+$/
 
-"au BufNewFile,BufRead,BufEnter *.cpp,*.hpp set tags+=~/.tags/node
-"au BufNewFile,BufRead,BufEnter *.cpp,*.hpp set tags+=~/.tags/stdlibcpp
+au BufNewFile,BufRead,BufEnter *.cpp,*.hpp set tags+=~/.tags/node
+au BufNewFile,BufRead,BufEnter *.cpp,*.hpp set tags+=~/.tags/stdlibcpp
 "au BufNewFile,BufRead,BufEnter *.cpp,*.hpp set omnifunc=omni#cpp#complete#Main
 
 set completeopt=menu
@@ -193,6 +196,7 @@ function! StripWhitespace()
 endfun
 
 command! Strip call StripWhitespace()<cr>
+nnoremap <leader>l :Strip<cr>
 
 
 
