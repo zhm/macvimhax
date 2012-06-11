@@ -1,7 +1,6 @@
 "
 " Author: Zac McCormick
 " https://github.com/zhm/macvimhax
-" https://github.com/brentd/vimfiles
 "
 
 call pathogen#helptags()
