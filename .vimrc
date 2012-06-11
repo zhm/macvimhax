@@ -59,6 +59,7 @@ colorscheme ir_black
 "ir_black tweaks, mostly makes NERDTree look prettier
 hi directory term=bold gui=bold guifg=#fcfcfc guibg=#111111
 hi normal guifg=#e7e3cb guibg=#111111
+hi CursorLine term=underline guibg=#222222 cterm=underline
 
 nmap , \
 
@@ -198,6 +199,8 @@ endfun
 command! Strip call StripWhitespace()<cr>
 nnoremap <leader>l :Strip<cr>
 
+" tabularize is a long word.
+command! -nargs=1 Tab call Tabularize(<f-args>)
 
 
 """ FocusMode, adopted from http://paulrouget.com/e/vimdarkroom/
