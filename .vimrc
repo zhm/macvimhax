@@ -42,6 +42,8 @@ set guifont=Inconsolata\ XL:h13    " http://www.bitcetera.com/en/techblog/2009/1
 set antialias                      " pretty text
 set expandtab                      " convert tabs to spaces
 set cursorline                     " highlight the current line
+set clipboard+=unnamed             " add the unnamed register to the clipboard
+set synmaxcol=1024                 " long lines don't get highlighting (slooooow)
 
 if has("gui_running")
 	set fuoptions=maxvert,maxhorz  " full screen is FULL SCREEN
@@ -58,7 +60,7 @@ colorscheme ir_black
 "ir_black tweaks, mostly makes NERDTree look prettier
 hi directory term=bold gui=bold guifg=#fcfcfc guibg=#111111
 hi normal guifg=#e7e3cb guibg=#111111
-hi CursorLine term=underline guibg=#222222 cterm=underline
+hi CursorLine term=none ctermbg=None ctermfg=None guibg=#222222 cterm=none
 
 nmap , \
 
@@ -96,6 +98,20 @@ nnoremap <leader>e $
 nnoremap <leader>f ^
 nnoremap <s-h> b
 nnoremap <s-l> w
+
+" use emacs-style shortcuts for command mode like the terminal
+cnoremap <C-A> <Home>
+cnoremap <C-E> <End>
+
+" move single lines using vim-unimpaired
+nmap <C-Up> [e
+nmap <C-Down> ]e
+" move multiple lines
+vmap <C-Up> [egv
+vmap <C-Down> ]egv
+
+"select last edited text using the edit markers
+nmap gV `[v`]
 
 " git helpers
 nnoremap <leader>gc :Gcommit<cr>
