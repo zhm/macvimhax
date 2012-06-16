@@ -85,3 +85,6 @@
 [submodule ".vim/bundle/vim-node"]
 	path = .vim/bundle/vim-node
 	url = https://github.com/guileen/vim-node.git
+[submodule ".vim/bundle/gyp.vim"]
+	path = .vim/bundle/gyp.vim
+	url = https://github.com/kelan/gyp.vim.git
