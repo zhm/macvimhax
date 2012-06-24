@@ -42,7 +42,7 @@ set guifont=Inconsolata\ XL:h13    " http://www.bitcetera.com/en/techblog/2009/1
 set antialias                      " pretty text
 set expandtab                      " convert tabs to spaces
 set cursorline                     " highlight the current line
-set clipboard+=unnamed             " add the unnamed register to the clipboard
+"set clipboard+=unnamed             " add the unnamed register to the clipboard
 set synmaxcol=1024                 " long lines don't get highlighting (slooooow)
 
 if has("gui_running")
