@@ -85,3 +85,6 @@
 [submodule ".vim/bundle/gyp.vim"]
 	path = .vim/bundle/gyp.vim
 	url = https://github.com/kelan/gyp.vim.git
+[submodule ".vim/bundle/TagHighlight"]
+	path = .vim/bundle/TagHighlight
+	url = https://github.com/zhm/TagHighlight.git
