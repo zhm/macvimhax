@@ -38,7 +38,8 @@ set background=dark                " dark ftw
 set lines=999                      " make it big
 set laststatus=2                   " always show the status window
 set linespace=0                    " set linespace to 0 so it looks pleasing
-set guifont=Inconsolata\ XL:h13    " http://www.bitcetera.com/en/techblog/2009/10/09/inconsolata-xl-font/
+set guifont=Inconsolata-dz\ for\ Powerline:h13 "https://gist.github.com/1595572
+"set guifont=Inconsolata\ XL:h13    " http://www.bitcetera.com/en/techblog/2009/10/09/inconsolata-xl-font/
 set antialias                      " pretty text
 set expandtab                      " convert tabs to spaces
 set cursorline                     " highlight the current line
@@ -187,6 +188,9 @@ let g:syntastic_cpp_auto_refresh_includes = 1
 let g:syntastic_cpp_check_header = 1
 "let g:syntastic_mode_map = { 'passive_filetypes': ['cpp', 'hpp'] }
 let g:syntastic_cpp_compiler_options = ' -I/usr/local/include/node -I/Users/zacmcc/local/include -I/usr/local/include'
+
+" vim-powerline
+let g:Powerline_symbols = 'fancy'
 
 " Remember last location in file
 if has("autocmd")
