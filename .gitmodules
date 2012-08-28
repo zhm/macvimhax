@@ -91,3 +91,12 @@
 [submodule ".vim/bundle/vim-powerline"]
 	path = .vim/bundle/vim-powerline
 	url = https://github.com/Lokaltog/vim-powerline.git
+[submodule ".vim/bundle/genutils"]
+	path = .vim/bundle/genutils
+	url = git://github.com/vim-scripts/genutils.git
+[submodule ".vim/bundle/multiselect"]
+	path = .vim/bundle/multiselect
+	url = git://github.com/vim-scripts/multiselect.git
+[submodule ".vim/bundle/vim-angry"]
+	path = .vim/bundle/vim-angry
+	url = git://github.com/b4winckler/vim-angry.git

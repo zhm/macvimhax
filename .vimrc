@@ -100,9 +100,26 @@ nnoremap <leader>f ^
 nnoremap <s-h> b
 nnoremap <s-l> w
 
+" nnoremap <C-K> O<Esc>j
+" nnoremap <C-J> o<Esc>k
+
+" insert a new line at the cursor without leaving normal mode
+nnoremap <s-enter> a<cr><esc>
+nnoremap <c-enter> I<cr><esc>k
+nnoremap <a-enter> o<esc>k
+
 " use emacs-style shortcuts for command mode like the terminal
 cnoremap <C-A> <Home>
 cnoremap <C-E> <End>
+
+noremap <Up>     :echo "No"<cr>
+noremap <Down>   :echo "No"<cr>
+noremap <Left>   :echo "No"<cr>
+noremap <Right>  :echo "No"<cr>
+inoremap <Up>    :echo "No"<cr>
+inoremap <Down>  :echo "No"<cr>
+inoremap <Left>  :echo "No"<cr>
+inoremap <Right> :echo "No"<cr>
 
 " move single lines using vim-unimpaired
 nmap <C-Up> [e
