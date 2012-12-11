@@ -100,3 +100,6 @@
 [submodule ".vim/bundle/vim-angry"]
 	path = .vim/bundle/vim-angry
 	url = git://github.com/b4winckler/vim-angry.git
+[submodule ".vim/bundle/vim-stylus"]
+	path = .vim/bundle/vim-stylus
+	url = git://github.com/wavded/vim-stylus.git
