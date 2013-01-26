@@ -103,3 +103,6 @@
 [submodule ".vim/bundle/vim-stylus"]
 	path = .vim/bundle/vim-stylus
 	url = git://github.com/wavded/vim-stylus.git
+[submodule ".vim/bundle/vim-seek"]
+	path = .vim/bundle/vim-seek
+	url = git://github.com/goldfeld/vim-seek.git
