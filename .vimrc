@@ -3,10 +3,62 @@
 " https://github.com/zhm/macvimhax
 "
 
-call pathogen#helptags()
-call pathogen#runtime_append_all_bundles()
+" call pathogen#helptags()
+" call pathogen#runtime_append_all_bundles()
 
 set nocompatible
+filetype off
+
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+
+Bundle 'gmarik/vundle'
+Bundle 'wincent/Command-T'
+Bundle 'pangloss/vim-javascript'
+Bundle 'scrooloose/nerdtree'
+Bundle 'tpope/vim-fugitive'
+Bundle 'tpope/vim-commentary'
+Bundle 'tpope/vim-surround'
+Bundle 'tpope/vim-unimpaired'
+Bundle 'tpope/vim-rails'
+Bundle 'tpope/vim-rake'
+Bundle 'tpope/vim-haml'
+Bundle 'tpope/vim-markdown'
+Bundle 'vim-scripts/Gist.vim'
+Bundle 'scrooloose/nerdcommenter'
+Bundle 'ervandew/supertab'
+Bundle 'kchmck/vim-coffee-script'
+Bundle 'msanders/cocoa.vim'
+Bundle 'mileszs/ack.vim'
+Bundle 'scrooloose/syntastic'
+Bundle 'kien/ctrlp.vim'
+Bundle 'int3/vim-taglist-plus'
+Bundle 'vim-ruby/vim-ruby'
+Bundle 'lyricallogical/ant.vim'
+Bundle 'zhm/a.vim'
+Bundle 'vim-scripts/Conque-Shell'
+Bundle 'vim-scripts/OmniCppComplete'
+Bundle 'godlygeek/tabular'
+Bundle 'msanders/snipmate.vim'
+Bundle 'digitaltoad/vim-jade'
+Bundle 'guileen/vim-node'
+Bundle 'kelan/gyp.vim'
+Bundle 'zhm/TagHighlight'
+Bundle 'Lokaltog/vim-powerline'
+Bundle 'vim-scripts/genutils'
+Bundle 'vim-scripts/multiselect'
+Bundle 'b4winckler/vim-angry'
+Bundle 'wavded/vim-stylus'
+Bundle 'goldfeld/vim-seek'
+Bundle 'jQuery'
+Bundle 'gmarik/github-search.vim'
+Bundle 'Gundo'
+Bundle 'nathanaelkane/vim-indent-guides'
+Bundle 'swaroopch/vim-markdown-preview'
+Bundle 'AndrewRadev/switch.vim'
+
+filetype plugin indent on
+
 syntax enable
 
 filetype on
