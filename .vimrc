@@ -56,6 +56,9 @@ Bundle 'Gundo'
 Bundle 'nathanaelkane/vim-indent-guides'
 Bundle 'swaroopch/vim-markdown-preview'
 Bundle 'AndrewRadev/switch.vim'
+" Bundle 'airblade/vim-gitgutter'
+" Bundle 'Valloric/YouCompleteMe'
+" Bundle 'Lokaltog/powerline'
 
 filetype plugin indent on
 
