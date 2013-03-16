@@ -27,6 +27,7 @@ Bundle 'tpope/vim-markdown'
 Bundle 'vim-scripts/Gist.vim'
 Bundle 'vim-scripts/Conque-Shell'
 Bundle 'vim-scripts/OmniCppComplete'
+Bundle 'vim-scripts/applescript.vim'
 Bundle 'scrooloose/nerdcommenter'
 Bundle 'ervandew/supertab'
 Bundle 'kchmck/vim-coffee-script'
@@ -128,6 +129,8 @@ nmap <leader>/ :tabnext<cr>
 " \b expands to :NERDTreeFromBookmark and then you can autocomplete the name of a bookmark
 map <leader>d :execute 'NERDTreeToggle ' . getcwd()<CR>
 map <leader>b :NERDTreeFromBookmark
+
+map <leader>z :execute '!/usr/bin/osascript ~/dotfiles/test.scpt ' . getcwd() . ' &'<CR>
 
 let NERDTreeIgnore=['\.pyc$', '\~$']  "ignore pyc files and anything ending with a ~
 let NERDTreeQuitOnOpen=0   " don't collapse NERDTree when a file is opened
