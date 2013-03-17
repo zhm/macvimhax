@@ -130,7 +130,7 @@ nmap <leader>/ :tabnext<cr>
 map <leader>d :execute 'NERDTreeToggle ' . getcwd()<CR>
 map <leader>b :NERDTreeFromBookmark
 
-map <leader>z :execute '!/usr/bin/osascript ~/dotfiles/test.scpt ' . getcwd() . ' &'<CR>
+map <leader>z :execute '!/usr/bin/osascript ~/dotfiles/test.scpt ' . getcwd() . ' &'<CR><CR>
 
 let NERDTreeIgnore=['\.pyc$', '\~$']  "ignore pyc files and anything ending with a ~
 let NERDTreeQuitOnOpen=0   " don't collapse NERDTree when a file is opened
