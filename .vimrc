@@ -59,6 +59,9 @@ Bundle 'nathanaelkane/vim-indent-guides'
 Bundle 'swaroopch/vim-markdown-preview'
 Bundle 'AndrewRadev/switch.vim'
 Bundle 'terryma/vim-multiple-cursors'
+Bundle 'mattn/webapi-vim'
+Bundle 'mmozuras/vim-github-comment'
+" Bundle 'bling/vim-airline'
 " Bundle 'airblade/vim-gitgutter'
 " Bundle 'Valloric/YouCompleteMe'
 " Bundle 'Lokaltog/powerline'
@@ -138,6 +141,11 @@ let NERDTreeIgnore=['\.pyc$', '\~$']  "ignore pyc files and anything ending with
 let NERDTreeQuitOnOpen=0   " don't collapse NERDTree when a file is opened
 let NERDTreeDirArrows=1    " ASCII art doesn't work for me
 let NERDTreeMinimalUI=1    " YAGNI
+
+let g:github_user = 'zhm'
+let g:github_comment_open_browser = 1
+
+let g:airline_powerline_fonts=1
 
 " window navigation shortcuts, ctrl h j k l
 nnoremap <c-j> <c-w>j
