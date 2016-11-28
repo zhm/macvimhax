@@ -62,6 +62,9 @@ Bundle 'terryma/vim-multiple-cursors'
 Bundle 'mattn/webapi-vim'
 Bundle 'mmozuras/vim-github-comment'
 Bundle 'junegunn/goyo.vim'
+Bundle 'groenewege/vim-less'
+Bundle 'leafgarland/typescript-vim'
+Bundle 'mtscout6/vim-cjsx'
 " Bundle 'bling/vim-airline'
 " Bundle 'airblade/vim-gitgutter'
 " Bundle 'Valloric/YouCompleteMe'
@@ -101,12 +104,15 @@ set lines=999                      " make it big
 set laststatus=2                   " always show the status window
 set linespace=0                    " set linespace to 0 so it looks pleasing
 set guifont=Inconsolata-dz\ for\ Powerline:h13 "https://gist.github.com/1595572
+" set guifont=Menlo:h15 "https://gist.github.com/1595572
 "set guifont=Inconsolata\ XL:h13    " http://www.bitcetera.com/en/techblog/2009/10/09/inconsolata-xl-font/
 set antialias                      " pretty text
 set expandtab                      " convert tabs to spaces
 set cursorline                     " highlight the current line
 "set clipboard+=unnamed             " add the unnamed register to the clipboard
 set synmaxcol=1024                 " long lines don't get highlighting (slooooow)
+
+set wildignore+=node_modules/**,.bundle/**
 
 if has("gui_running")
 	set fuoptions=maxvert,maxhorz  " full screen is FULL SCREEN
@@ -228,6 +234,7 @@ autocmd InsertLeave * match ExtraWhitespace /\s\+$/
 
 au BufNewFile,BufRead,BufEnter *.cpp,*.hpp set tags+=~/.tags/node
 au BufNewFile,BufRead,BufEnter *.cpp,*.hpp set tags+=~/.tags/stdlibcpp
+au BufRead,BufNewFile *.cson set ft=coffee
 "au BufNewFile,BufRead,BufEnter *.cpp,*.hpp set omnifunc=omni#cpp#complete#Main
 
 set completeopt=menu
@@ -273,7 +280,9 @@ let g:gist_clip_command = 'pbcopy'   " copy link to clipboard after it's posted
 let g:syntastic_cpp_auto_refresh_includes = 1
 let g:syntastic_cpp_check_header = 1
 "let g:syntastic_mode_map = { 'passive_filetypes': ['cpp', 'hpp'] }
-let g:syntastic_cpp_compiler_options = ' -I/usr/local/include/node -I/Users/zacmcc/local/include -I/usr/local/include'
+let g:syntastic_cpp_compiler_options = ' -std=c++14 -I/usr/local/include/node -I/Users/zacmcc/local/include -I/usr/local/include'
+
+let g:syntastic_javascript_checkers = ['eslint']
 
 " vim-powerline
 let g:Powerline_symbols = 'fancy'
